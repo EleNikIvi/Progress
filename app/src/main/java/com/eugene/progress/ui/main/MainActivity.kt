@@ -9,17 +9,18 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private val presenter: MainContract.Presenter by inject()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
 
-        presenter.onAttached(this)
+        presenter.onAttach(this)
     }
 
     override fun onDestroy() {
 
-        presenter.onDetached()
+        presenter.onDetach()
 
         super.onDestroy()
     }
