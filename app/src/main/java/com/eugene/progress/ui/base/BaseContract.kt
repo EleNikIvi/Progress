@@ -6,9 +6,9 @@ interface BaseContract {
 
     interface Presenter<V : BaseContract.View, I : BaseContract.Interactor> {
 
-        fun onAttached(view: V?)
+        fun onAttach(view: V?)
 
-        fun onDetached()
+        fun onDetach()
 
         fun getView(): V?
     }

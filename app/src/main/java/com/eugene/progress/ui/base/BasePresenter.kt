@@ -6,12 +6,12 @@ abstract class BasePresenter<V : BaseContract.View, I : BaseContract.Interactor>
     private var view: V? = null
 
 
-    override fun onAttached(view: V?) {
+    override fun onAttach(view: V?) {
 
         this.view = view
     }
 
-    override fun onDetached() {
+    override fun onDetach() {
 
         view = null
         interactor = null
