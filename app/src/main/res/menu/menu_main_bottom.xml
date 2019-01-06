@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/bnv_main_day"
+            android:id="@+id/itm_day"
             android:icon="@drawable/ic_day_white_24dp"
             android:title="@string/day"/>
     <item
-            android:id="@+id/bnv_main_week"
+            android:id="@+id/itm_week"
             android:icon="@drawable/ic_week_white_24dp"
             android:title="@string/week"/>
     <item
-            android:id="@+id/bnv_main_month"
+            android:id="@+id/itm_month"
             android:icon="@drawable/ic_month_white_24dp"
             android:title="@string/month"/>
     <item
-            android:id="@+id/bnv_main_year"
+            android:id="@+id/itm_year"
             android:icon="@drawable/ic_year_white_24dp"
             android:title="@string/year"/>
 </menu>
