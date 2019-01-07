@@ -3,4 +3,7 @@
     <attr name="toolbarBackground" format="reference"/>
     <attr name="contentBackground" format="reference"/>
     <attr name="bottomNavigationBackground" format="reference"/>
+
+    <attr name="textColor" format="reference"/>
+    <attr name="iconColor" format="reference"/>
 </resources>

@@ -4,8 +4,13 @@
     </style>
 
     <style name="AppTheme.Violet">
+        <item name="colorPrimaryDark">@color/violetPrimaryDark</item>
+
         <item name="toolbarBackground">@color/violetPrimaryLight</item>
-        <item name="contentBackground">@drawable/violet_content_background</item>
+        <item name="contentBackground">@drawable/bg_violet_content</item>
         <item name="bottomNavigationBackground">@color/violetPrimaryDark</item>
+
+        <item name="textColor">@color/white</item>
+        <item name="iconColor">@color/white</item>
     </style>
 </resources>
