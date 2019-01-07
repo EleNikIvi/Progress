@@ -4,10 +4,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/tlb__main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?toolbarBackground"/>
+
     <FrameLayout
             android:id="@+id/frm_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/tlb__main"
             android:layout_above="@+id/bnv_main"/>
 
     <android.support.design.widget.BottomNavigationView
@@ -18,5 +25,6 @@
             android:layout_gravity="bottom"
             app:itemIconTint="#FFFFFF"
             app:itemTextColor="#FFFFFF"
+            android:background="?bottomNavigationBackground"
             app:menu="@menu/menu_main_bottom"/>
 </RelativeLayout>

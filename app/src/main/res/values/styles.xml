@@ -1,9 +1,11 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
 
-    <style name="AppTheme.Dark">
-
+    <style name="AppTheme.Violet">
+        <item name="toolbarBackground">@color/violetPrimaryLight</item>
+        <item name="contentBackground">@drawable/violet_content_background</item>
+        <item name="bottomNavigationBackground">@color/violetPrimaryDark</item>
     </style>
 </resources>
