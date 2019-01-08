@@ -1,6 +1,8 @@
 package com.eugene.progress
 
 import android.app.Application
+import com.eugene.progress.domain.service.TimeService
+import com.eugene.progress.domain.service.TimeServiceContract
 import com.eugene.progress.ui.main.MainContract
 import com.eugene.progress.ui.main.MainInteractor
 import com.eugene.progress.ui.main.MainPresenter
@@ -26,10 +28,13 @@ class App : Application() {
 
         startKoin(
             this,
-            listOf(mainModule, mainDayModule, mainWeekModule, mainMonthModule, mainYearModule)
+            listOf(domainModule, mainModule, mainDayModule, mainWeekModule, mainMonthModule, mainYearModule)
         )
     }
 
+    private val domainModule = module {
+        factory<TimeServiceContract> { TimeService() }
+    }
 
     private val mainModule = module {
         single<MainContract.Presenter> { MainPresenter(get()) }
@@ -38,21 +43,21 @@ class App : Application() {
 
     private val mainDayModule = module {
         single<MainDayContract.Presenter> { MainDayPresenter(get()) }
-        single<MainDayContract.Interactor> { MainDayInteractor() }
+        single<MainDayContract.Interactor> { MainDayInteractor(get()) }
     }
 
     private val mainWeekModule = module {
         single<MainWeekContract.Presenter> { MainWeekPresenter(get()) }
-        single<MainWeekContract.Interactor> { MainWeekInteractor() }
+        single<MainWeekContract.Interactor> { MainWeekInteractor(get()) }
     }
 
     private val mainMonthModule = module {
         single<MainMonthContract.Presenter> { MainMonthPresenter(get()) }
-        single<MainMonthContract.Interactor> { MainMonthInteractor() }
+        single<MainMonthContract.Interactor> { MainMonthInteractor(get()) }
     }
 
     private val mainYearModule = module {
         single<MainYearContract.Presenter> { MainYearPresenter(get()) }
-        single<MainYearContract.Interactor> { MainYearInteractor() }
+        single<MainYearContract.Interactor> { MainYearInteractor(get()) }
     }
 }

@@ -5,4 +5,6 @@
     <string name="week">Week</string>
     <string name="month">Month</string>
     <string name="year">Year</string>
+
+    <string name="main_percentages">%s\%%</string>
 </resources>
