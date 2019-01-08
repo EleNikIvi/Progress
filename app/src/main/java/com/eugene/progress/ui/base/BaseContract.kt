@@ -9,8 +9,6 @@ interface BaseContract {
         fun onAttach(view: V?)
 
         fun onDetach()
-
-        fun getView(): V?
     }
 
     interface Interactor

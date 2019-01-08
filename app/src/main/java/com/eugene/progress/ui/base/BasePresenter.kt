@@ -1,9 +1,10 @@
 package com.eugene.progress.ui.base
 
-abstract class BasePresenter<V : BaseContract.View, I : BaseContract.Interactor>(private var interactor: I?) :
+abstract class BasePresenter<V : BaseContract.View, I : BaseContract.Interactor>(protected var interactor: I?) :
     BaseContract.Presenter<V, I> {
 
-    private var view: V? = null
+    protected var view: V? = null
+        private set
 
 
     override fun onAttach(view: V?) {
@@ -15,10 +16,5 @@ abstract class BasePresenter<V : BaseContract.View, I : BaseContract.Interactor>
 
         view = null
         interactor = null
-    }
-
-    override fun getView(): V? {
-
-        return this.view
     }
 }
