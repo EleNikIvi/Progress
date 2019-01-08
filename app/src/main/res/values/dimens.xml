@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSizePeriod">36sp</dimen>
+    <dimen name="textSizePercent">108sp</dimen>
+</resources>
