@@ -6,7 +6,7 @@ interface MainWeekContract : BaseContract {
 
     interface View : BaseContract.View {
 
-        fun fillTimeTable(percentages: Int)
+        fun fillTimeTable(percent: Int)
     }
 
     interface Presenter : BaseContract.Presenter<View, Interactor>

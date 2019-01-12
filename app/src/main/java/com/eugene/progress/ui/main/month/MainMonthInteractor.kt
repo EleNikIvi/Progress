@@ -9,6 +9,6 @@ class MainMonthInteractor(private val timeService: TimeServiceContract) :
 
     override fun getProgressPercentages(): Int {
 
-        return timeService.getProgressPercentages(TimePeriod.DAY)
+        return timeService.getProgressPercent(TimePeriod.DAY)
     }
 }

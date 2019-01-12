@@ -1,6 +1,9 @@
 package com.eugene.progress.ui.main.week
 
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.AbsoluteSizeSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +40,18 @@ class MainWeekFragment :
     }
 
 
-    override fun fillTimeTable(percentages: Int) {
+    override fun fillTimeTable(percent: Int) {
 
-        txt_percentages.text = String.format(getString(R.string.main_percentages), percentages)
+        val percentProgress = SpannableStringBuilder(String.format(getString(R.string.main_percentages), percent))
+
+        percentProgress.setSpan(
+            AbsoluteSizeSpan(resources.getDimensionPixelSize(R.dimen.textSizePercentSign)),
+            percentProgress.length - 1,
+            percentProgress.length,
+            Spanned.SPAN_INCLUSIVE_INCLUSIVE
+        )
+
+        txt_percent.text = percentProgress
     }
 
 

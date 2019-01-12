@@ -4,7 +4,7 @@ import com.eugene.progress.domain.enum.TimePeriod
 
 interface TimeServiceContract {
 
-    fun getProgressPercentages(timePeriod: TimePeriod): Int
+    fun getProgressPercent(timePeriod: TimePeriod): Int
 
-    fun getRemainingPercentages(timePeriod: TimePeriod): Int
+    fun getRemainingPercent(timePeriod: TimePeriod): Int
 }

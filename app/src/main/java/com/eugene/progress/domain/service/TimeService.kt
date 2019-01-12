@@ -4,12 +4,12 @@ import com.eugene.progress.domain.enum.TimePeriod
 
 class TimeService : TimeServiceContract {
 
-    override fun getProgressPercentages(timePeriod: TimePeriod): Int {
+    override fun getProgressPercent(timePeriod: TimePeriod): Int {
 
         return 0
     }
 
-    override fun getRemainingPercentages(timePeriod: TimePeriod): Int {
+    override fun getRemainingPercent(timePeriod: TimePeriod): Int {
 
         return 0
     }
