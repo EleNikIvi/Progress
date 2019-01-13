@@ -18,6 +18,9 @@ import com.eugene.progress.ui.main.week.MainWeekPresenter
 import com.eugene.progress.ui.main.year.MainYearContract
 import com.eugene.progress.ui.main.year.MainYearInteractor
 import com.eugene.progress.ui.main.year.MainYearPresenter
+import com.eugene.progress.ui.settings.SettingsContract
+import com.eugene.progress.ui.settings.SettingsInteractor
+import com.eugene.progress.ui.settings.SettingsPresenter
 import org.koin.android.ext.android.startKoin
 import org.koin.dsl.module.module
 
@@ -28,7 +31,11 @@ class App : Application() {
 
         startKoin(
             this,
-            listOf(domainModule, mainModule, mainDayModule, mainWeekModule, mainMonthModule, mainYearModule)
+            listOf(
+                domainModule,
+                mainModule, mainDayModule, mainWeekModule, mainMonthModule, mainYearModule,
+                settingsModule
+            )
         )
     }
 
@@ -59,5 +66,10 @@ class App : Application() {
     private val mainYearModule = module {
         factory<MainYearContract.Presenter> { MainYearPresenter(get()) }
         factory<MainYearContract.Interactor> { MainYearInteractor(get()) }
+    }
+
+    private val settingsModule = module {
+        factory<SettingsContract.Presenter> { SettingsPresenter(get()) }
+        factory<SettingsContract.Interactor> { SettingsInteractor() }
     }
 }

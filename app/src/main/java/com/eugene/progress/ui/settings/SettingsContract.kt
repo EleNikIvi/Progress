@@ -1,17 +1,17 @@
-package com.eugene.progress.ui.main
+package com.eugene.progress.ui.settings
 
 import com.eugene.progress.ui.base.BaseContract
 
-interface MainContract : BaseContract {
+interface SettingsContract : BaseContract {
 
     interface View : BaseContract.View {
 
-        fun showSettingsView()
+        fun showPreviousView()
     }
 
     interface Presenter : BaseContract.Presenter<View, Interactor> {
 
-        fun onSettingsMenuItemClicked()
+        fun onBackButtonClicked()
     }
 
     interface Interactor : BaseContract.Interactor
