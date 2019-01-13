@@ -37,27 +37,27 @@ class App : Application() {
     }
 
     private val mainModule = module {
-        single<MainContract.Presenter> { MainPresenter(get()) }
-        single<MainContract.Interactor> { MainInteractor() }
+        factory<MainContract.Presenter> { MainPresenter(get()) }
+        factory<MainContract.Interactor> { MainInteractor() }
     }
 
     private val mainDayModule = module {
-        single<MainDayContract.Presenter> { MainDayPresenter(get()) }
-        single<MainDayContract.Interactor> { MainDayInteractor(get()) }
+        factory<MainDayContract.Presenter> { MainDayPresenter(get()) }
+        factory<MainDayContract.Interactor> { MainDayInteractor(get()) }
     }
 
     private val mainWeekModule = module {
-        single<MainWeekContract.Presenter> { MainWeekPresenter(get()) }
-        single<MainWeekContract.Interactor> { MainWeekInteractor(get()) }
+        factory<MainWeekContract.Presenter> { MainWeekPresenter(get()) }
+        factory<MainWeekContract.Interactor> { MainWeekInteractor(get()) }
     }
 
     private val mainMonthModule = module {
-        single<MainMonthContract.Presenter> { MainMonthPresenter(get()) }
-        single<MainMonthContract.Interactor> { MainMonthInteractor(get()) }
+        factory<MainMonthContract.Presenter> { MainMonthPresenter(get()) }
+        factory<MainMonthContract.Interactor> { MainMonthInteractor(get()) }
     }
 
     private val mainYearModule = module {
-        single<MainYearContract.Presenter> { MainYearPresenter(get()) }
-        single<MainYearContract.Interactor> { MainYearInteractor(get()) }
+        factory<MainYearContract.Presenter> { MainYearPresenter(get()) }
+        factory<MainYearContract.Interactor> { MainYearInteractor(get()) }
     }
 }
