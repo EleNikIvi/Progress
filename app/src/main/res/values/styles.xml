@@ -1,7 +1,5 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
-    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
 
     <style name="AppTheme.Violet">
         <item name="colorPrimaryDark">@color/violetPrimaryDark</item>
@@ -12,5 +10,12 @@
 
         <item name="textColor">@color/white</item>
         <item name="iconColor">@color/white</item>
+    </style>
+
+
+    <style name="AppToolbar">
+        <item name="android:background">?toolbarBackground</item>
+        <item name="android:textColorPrimary">?textColor</item>
+        <item name="android:textColorSecondary">?textColor</item>
     </style>
 </resources>
