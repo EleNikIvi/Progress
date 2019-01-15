@@ -1,15 +1,40 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
-
-    <style name="AppTheme.Violet">
-        <item name="colorPrimaryDark">@color/violetPrimaryDark</item>
-
-        <item name="toolbarBackground">@color/violetPrimaryLight</item>
-        <item name="contentBackground">@drawable/bg_violet_content</item>
-        <item name="bottomNavigationBackground">@color/violetPrimaryDark</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="textColor">@color/white</item>
         <item name="iconColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.Space">
+        <item name="colorPrimaryDark">@color/spacePrimaryDark</item>
+
+        <item name="toolbarBackground">@color/spacePrimaryLight</item>
+        <item name="contentBackground">@drawable/bg_space_content</item>
+        <item name="bottomNavigationBackground">@color/spacePrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.Mint">
+        <item name="colorPrimaryDark">@color/mintPrimaryDark</item>
+
+        <item name="toolbarBackground">@color/mintPrimaryLight</item>
+        <item name="contentBackground">@drawable/bg_mint_content</item>
+        <item name="bottomNavigationBackground">@color/mintPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.Sky">
+        <item name="colorPrimaryDark">@color/skyPrimaryDark</item>
+
+        <item name="toolbarBackground">@color/skyPrimaryLight</item>
+        <item name="contentBackground">@drawable/bg_sky_content</item>
+        <item name="bottomNavigationBackground">@color/skyPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.Cherry">
+        <item name="colorPrimaryDark">@color/cherryPrimaryDark</item>
+
+        <item name="toolbarBackground">@color/cherryPrimaryLight</item>
+        <item name="contentBackground">@drawable/bg_cherry_content</item>
+        <item name="bottomNavigationBackground">@color/cherryPrimaryDark</item>
     </style>
 
 

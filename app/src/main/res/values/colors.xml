@@ -2,7 +2,19 @@
 <resources>
     <color name="white">#FFFFFF</color>
 
-    <color name="violetPrimary">#33385A</color>
-    <color name="violetPrimaryLight">#3D446A</color>
-    <color name="violetPrimaryDark">#2A2C44</color>
+    <color name="spacePrimary">#33385A</color>
+    <color name="spacePrimaryLight">#454C7B</color>
+    <color name="spacePrimaryDark">#2D314F</color>
+
+    <color name="mintPrimary">#228265</color>
+    <color name="mintPrimaryLight">#2DAA84</color>
+    <color name="mintPrimaryDark">#1E755B</color>
+
+    <color name="skyPrimary">#1E6789</color>
+    <color name="skyPrimaryLight">#2786B3</color>
+    <color name="skyPrimaryDark">#1B5D7B</color>
+
+    <color name="cherryPrimary">#871d29</color>
+    <color name="cherryPrimaryLight">#b12636</color>
+    <color name="cherryPrimaryDark">#781a25</color>
 </resources>
