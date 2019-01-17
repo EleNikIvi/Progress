@@ -1,6 +1,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
+        <item name="android:windowAnimationStyle">@style/AppAnimationActivity</item>
+
         <item name="textColor">@color/white</item>
         <item name="iconColor">@color/white</item>
     </style>
@@ -37,6 +39,13 @@
         <item name="bottomNavigationBackground">@color/cherryPrimaryDark</item>
     </style>
 
+
+    <style name="AppAnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_slide_out_right</item>
+    </style>
 
     <style name="AppToolbar">
         <item name="android:background">?toolbarBackground</item>
