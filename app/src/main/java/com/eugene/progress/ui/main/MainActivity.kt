@@ -85,11 +85,11 @@ class MainActivity : BaseActivity(), MainContract.View {
 
         setSupportActionBar(tlb__main)
         supportActionBar?.title = ""
+
+        setContentFragment(MainDayFragment())
     }
 
     private fun setupView() {
-
-        setContentFragment(MainDayFragment())
 
         bnv_main.setOnNavigationItemSelectedListener {
 
