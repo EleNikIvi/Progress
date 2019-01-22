@@ -1,14 +1,16 @@
 package com.eugene.progress.ui.settings
 
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.eugene.progress.R
 import com.eugene.progress.ui.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_settings.*
 import org.koin.android.ext.android.inject
 
 class SettingsActivity : BaseActivity(), SettingsContract.View {
 
     private val presenter: SettingsContract.Presenter by inject()
+
+    private var tlbSettings: Toolbar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,8 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
     override fun onDestroy() {
 
         presenter.onDetach()
+
+        destroyView()
 
         super.onDestroy()
     }
@@ -51,8 +55,15 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
 
     private fun initView() {
 
-        setSupportActionBar(tlb__settings)
+        tlbSettings = findViewById(R.id.tlb__settings)
+
+        setSupportActionBar(tlbSettings)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.settings)
+    }
+
+    private fun destroyView() {
+
+        tlbSettings = null
     }
 }

@@ -7,15 +7,18 @@ import android.text.style.AbsoluteSizeSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.eugene.progress.R
 import com.eugene.progress.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.view_time_table.*
 import org.koin.android.ext.android.inject
 
 class MainDayFragment :
     BaseFragment(), MainDayContract.View {
 
     private val presenter: MainDayContract.Presenter by inject()
+
+    private var txtPeriod: TextView? = null
+    private var txtPercent: TextView? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -25,16 +28,18 @@ class MainDayFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        presenter.onAttach(this)
-
         super.onViewCreated(view, savedInstanceState)
 
         initView()
+
+        presenter.onAttach(this)
     }
 
     override fun onDestroyView() {
 
         presenter.onDetach()
+
+        destroyView()
 
         super.onDestroyView()
     }
@@ -51,12 +56,21 @@ class MainDayFragment :
             Spanned.SPAN_INCLUSIVE_INCLUSIVE
         )
 
-        txt_percent.text = percentProgress
+        txtPercent?.text = percentProgress
     }
 
 
     private fun initView() {
 
-        txt_period.text = getString(R.string.day)
+        txtPeriod = view?.findViewById(R.id.txt_period)
+        txtPercent = view?.findViewById(R.id.txt_percent)
+
+        txtPeriod?.text = getString(R.string.day)
+    }
+
+    private fun destroyView() {
+
+        txtPeriod = null
+        txtPercent = null
     }
 }

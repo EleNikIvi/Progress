@@ -3,12 +3,11 @@ package com.eugene.progress.utils
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
-import android.support.design.widget.Snackbar
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AlertDialog
 import android.view.View
-import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.eugene.progress.R
+import com.google.android.material.snackbar.Snackbar
 
 object DialogUtils {
 
@@ -79,7 +78,7 @@ object DialogUtils {
         context: Context,
         view: View,
         message: String,
-        duration: Int = LENGTH_SHORT,
+        duration: Int = Snackbar.LENGTH_SHORT,
         actionTitle: String = "",
         actionOnClickListener: View.OnClickListener? = null
     ): Snackbar {

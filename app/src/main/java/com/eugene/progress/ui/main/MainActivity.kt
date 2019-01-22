@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import com.eugene.progress.R
 import com.eugene.progress.ui.base.BaseActivity
 import com.eugene.progress.ui.base.BaseFragment
@@ -12,12 +13,15 @@ import com.eugene.progress.ui.main.month.MainMonthFragment
 import com.eugene.progress.ui.main.week.MainWeekFragment
 import com.eugene.progress.ui.main.year.MainYearFragment
 import com.eugene.progress.ui.settings.SettingsActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.android.ext.android.inject
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), MainContract.View {
 
     private val presenter: MainContract.Presenter by inject()
+
+    private var tlbMain: Toolbar? = null
+    private var bnvMain: BottomNavigationView? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +50,8 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun onDestroy() {
 
         presenter.onDetach()
+
+        destroyView()
 
         super.onDestroy()
     }
@@ -83,7 +89,10 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private fun initView() {
 
-        setSupportActionBar(tlb__main)
+        tlbMain = findViewById(R.id.tlb__main)
+        bnvMain = findViewById(R.id.bnv_main)
+
+        setSupportActionBar(tlbMain)
         supportActionBar?.title = ""
 
         setContentFragment(MainDayFragment())
@@ -91,7 +100,7 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private fun setupView() {
 
-        bnv_main.setOnNavigationItemSelectedListener {
+        bnvMain?.setOnNavigationItemSelectedListener {
 
             when (it.itemId) {
                 R.id.itm_day -> {
@@ -121,7 +130,13 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private fun terminateView() {
 
-        bnv_main.setOnNavigationItemSelectedListener(null)
+        bnvMain?.setOnNavigationItemSelectedListener(null)
+    }
+
+    private fun destroyView() {
+
+        tlbMain = null
+        bnvMain = null
     }
 
     private fun setContentFragment(fragment: BaseFragment) {
