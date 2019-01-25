@@ -88,7 +88,11 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
             addPreferencesFromResource(R.xml.settings)
 
             val appVersion = findPreference("settings__app_version")
-            appVersion?.summary = "${BuildConfig.VERSION_NAME}.${BuildConfig.VERSION_CODE}"
+            appVersion?.summary = String.format(
+                getString(R.string.settings__app_version_description),
+                "${BuildConfig.VERSION_NAME}.${BuildConfig.VERSION_CODE}"
+            )
+
         }
     }
 }

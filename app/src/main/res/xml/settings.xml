@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference
-            android:title="@string/settings__app_theme"
-            android:key="listPref"
-            android:icon="@drawable/ic_color_lens_black_24dp"
-            android:defaultValue="0"
-            android:entries="@array/listThemeName"
-            android:entryValues="@array/listThemeId"/>
-    <Preference
-            android:key="settings__app_version"
-            android:title="@string/app__name"
-            android:icon="@drawable/ic_info_outline_black_24dp"/>
+
+    <PreferenceCategory android:title="@string/settings__ui_category">
+
+        <ListPreference
+                android:title="@string/settings__app_theme"
+                android:key="settings__app_theme"
+                android:icon="@drawable/ic_color_lens_black_24dp"
+                android:defaultValue="0"
+                android:entries="@array/listThemeName"
+                android:entryValues="@array/listThemeId"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings__about_category">
+
+        <Preference
+                android:key="settings__rate_app"
+                android:title="@string/settings__rate_app"
+                android:summary="@string/settings__rate_app_description"
+                android:icon="@drawable/ic_star_half_black_24dp"/>
+
+        <Preference
+                android:key="settings__app_version"
+                android:title="@string/app__name"
+                android:icon="@drawable/ic_info_outline_black_24dp"/>
+    </PreferenceCategory>
 </PreferenceScreen>

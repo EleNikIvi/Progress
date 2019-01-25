@@ -14,5 +14,10 @@
 
     <string name="main__percentages">%s\%%</string>
 
+    <string name="settings__ui_category">User interface</string>
     <string name="settings__app_theme">App theme</string>
+    <string name="settings__about_category">About</string>
+    <string name="settings__app_version_description">Version: %s</string>
+    <string name="settings__rate_app">Rate the app</string>
+    <string name="settings__rate_app_description">Share your feedback in Google Play</string>
 </resources>
