@@ -3,17 +3,17 @@
     <item
             android:id="@+id/itm_day"
             android:icon="@drawable/ic_day_white_24dp"
-            android:title="@string/day"/>
+            android:title="@string/global__day"/>
     <item
             android:id="@+id/itm_week"
             android:icon="@drawable/ic_week_white_24dp"
-            android:title="@string/week"/>
+            android:title="@string/global__week"/>
     <item
             android:id="@+id/itm_month"
             android:icon="@drawable/ic_month_white_24dp"
-            android:title="@string/month"/>
+            android:title="@string/global__month"/>
     <item
             android:id="@+id/itm_year"
             android:icon="@drawable/ic_year_white_24dp"
-            android:title="@string/year"/>
+            android:title="@string/global__year"/>
 </menu>

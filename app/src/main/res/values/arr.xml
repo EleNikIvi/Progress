@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="listThemeName">
+        <item>@string/app_theme__space</item>
+        <item>@string/app_theme__mint</item>
+        <item>@string/app_theme__sky</item>
+        <item>@string/app_theme__cherry</item>
+    </string-array>
+
+    <string-array name="listThemeId">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+            android:title="@string/settings__app_theme"
+            android:key="listPref"
+            android:icon="@drawable/ic_color_lens_black_24dp"
+            android:defaultValue="0"
+            android:entries="@array/listThemeName"
+            android:entryValues="@array/listThemeId"/>
     <Preference
-            android:title="@string/app_name"/>
+            android:title="@string/app__name"
+            android:icon="@drawable/ic_info_outline_black_24dp"/>
 </PreferenceScreen>

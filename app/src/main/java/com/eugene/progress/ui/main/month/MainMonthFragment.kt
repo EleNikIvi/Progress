@@ -47,7 +47,7 @@ class MainMonthFragment :
 
     override fun fillTimeTable(percent: Int) {
 
-        val percentProgress = SpannableStringBuilder(String.format(getString(R.string.main_percentages), percent))
+        val percentProgress = SpannableStringBuilder(String.format(getString(R.string.main__percentages), percent))
 
         percentProgress.setSpan(
             AbsoluteSizeSpan(resources.getDimensionPixelSize(R.dimen.textSizePercentSign)),
@@ -65,7 +65,7 @@ class MainMonthFragment :
         txtPeriod = view?.findViewById(R.id.txt_period)
         txtPercent = view?.findViewById(R.id.txt_percent)
 
-        txtPeriod?.text = getString(R.string.month)
+        txtPeriod?.text = getString(R.string.global__month)
     }
 
     private fun destroyView() {

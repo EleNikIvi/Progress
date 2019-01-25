@@ -4,5 +4,5 @@
             android:id="@+id/itm_settings"
             android:icon="@drawable/ic_settings_white_24dp"
             app:showAsAction="ifRoom"
-            android:title="@string/settings"/>
+            android:title="@string/global__settings"/>
 </menu>

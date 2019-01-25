@@ -66,7 +66,7 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
 
         setSupportActionBar(tlbSettings)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setTitle(R.string.settings)
+        supportActionBar?.setTitle(R.string.global__settings)
     }
 
     private fun destroyView() {
