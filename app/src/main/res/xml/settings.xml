@@ -8,6 +8,7 @@
             android:entries="@array/listThemeName"
             android:entryValues="@array/listThemeId"/>
     <Preference
+            android:key="settings__app_version"
             android:title="@string/app__name"
             android:icon="@drawable/ic_info_outline_black_24dp"/>
 </PreferenceScreen>

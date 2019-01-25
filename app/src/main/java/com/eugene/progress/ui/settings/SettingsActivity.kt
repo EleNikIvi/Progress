@@ -3,6 +3,7 @@ package com.eugene.progress.ui.settings
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.preference.PreferenceFragmentCompat
+import com.eugene.progress.BuildConfig
 import com.eugene.progress.R
 import com.eugene.progress.ui.base.BaseActivity
 import org.koin.android.ext.android.inject
@@ -83,7 +84,11 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
+
             addPreferencesFromResource(R.xml.settings)
+
+            val appVersion = findPreference("settings__app_version")
+            appVersion?.summary = "${BuildConfig.VERSION_NAME}.${BuildConfig.VERSION_CODE}"
         }
     }
 }
