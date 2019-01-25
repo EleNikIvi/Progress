@@ -2,6 +2,7 @@ package com.eugene.progress.ui.settings
 
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.preference.PreferenceFragmentCompat
 import com.eugene.progress.R
 import com.eugene.progress.ui.base.BaseActivity
 import org.koin.android.ext.android.inject
@@ -17,6 +18,12 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_settings)
+
+        if (supportFragmentManager.findFragmentById(android.R.id.content) == null) {
+
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frm_content, SettingsFragment()).commit()
+        }
 
         initView()
 
@@ -65,5 +72,18 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
     private fun destroyView() {
 
         tlbSettings = null
+    }
+
+
+    class SettingsFragment : PreferenceFragmentCompat() {
+
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+
+        }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            addPreferencesFromResource(R.xml.settings)
+        }
     }
 }
