@@ -1,7 +1,7 @@
 package com.eugene.progress
 
 import android.app.Application
-import com.eugene.progress.data.prefs.SharedPreferencesManager
+import com.eugene.progress.data.prefs.SharedPreferences
 import com.eugene.progress.domain.service.TimeService
 import com.eugene.progress.domain.service.TimeServiceContract
 import com.eugene.progress.ui.main.MainContract
@@ -42,7 +42,7 @@ class App : Application() {
     }
 
     private val dataModule = module {
-        factory { SharedPreferencesManager(get(), AppConstants.PACKAGE_NAME) }
+        factory { SharedPreferences(get()) }
     }
 
     private val domainModule = module {

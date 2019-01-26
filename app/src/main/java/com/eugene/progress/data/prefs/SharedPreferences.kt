@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
-class SharedPreferencesManager(context: Context, name: String) {
+class SharedPreferences(context: Context, name: String? = null) {
 
     private val sharedPreferences: SharedPreferences by lazy {
 
-        if (name.isEmpty()) {
+        if (name.isNullOrEmpty()) {
             PreferenceManager.getDefaultSharedPreferences(context)
         } else {
             context.getSharedPreferences(name, Context.MODE_PRIVATE)
