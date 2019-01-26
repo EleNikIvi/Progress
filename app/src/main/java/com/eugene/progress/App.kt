@@ -1,6 +1,7 @@
 package com.eugene.progress
 
 import android.app.Application
+import com.eugene.progress.data.prefs.SharedPreferencesManager
 import com.eugene.progress.domain.service.TimeService
 import com.eugene.progress.domain.service.TimeServiceContract
 import com.eugene.progress.ui.main.MainContract
@@ -32,11 +33,16 @@ class App : Application() {
         startKoin(
             this,
             listOf(
+                dataModule,
                 domainModule,
                 mainModule, mainDayModule, mainWeekModule, mainMonthModule, mainYearModule,
                 settingsModule
             )
         )
+    }
+
+    private val dataModule = module {
+        factory { SharedPreferencesManager(get(), AppConstants.PACKAGE_NAME) }
     }
 
     private val domainModule = module {
