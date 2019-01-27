@@ -5,7 +5,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.preference.PreferenceFragmentCompat
 import com.eugene.progress.BuildConfig
 import com.eugene.progress.R
-import com.eugene.progress.data.prefs.SharedPreferences
 import com.eugene.progress.domain.manager.SettingsManagerContract
 import com.eugene.progress.ui.base.BaseActivity
 import org.koin.android.ext.android.inject
@@ -93,9 +92,10 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
             addPreferencesFromResource(R.xml.settings)
 
             val appTheme = findPreference("settings__app_theme")
-            appTheme?.summary = getThemeName(settingsManager.getThemeId())
+            appTheme?.summary = getThemeName(settingsManager.getAppThemeId())
             appTheme.setOnPreferenceChangeListener { _, newValue ->
                 appTheme?.summary = getThemeName(newValue as String)
+                activity?.recreate()
                 true
             }
 
