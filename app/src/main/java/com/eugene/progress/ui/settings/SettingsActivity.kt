@@ -5,6 +5,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.preference.PreferenceFragmentCompat
 import com.eugene.progress.BuildConfig
 import com.eugene.progress.R
+import com.eugene.progress.data.prefs.SharedPreferences
+import com.eugene.progress.domain.manager.SettingsManagerContract
 import com.eugene.progress.ui.base.BaseActivity
 import org.koin.android.ext.android.inject
 
@@ -78,6 +80,9 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
 
     class SettingsFragment : PreferenceFragmentCompat() {
 
+        private val settingsManager: SettingsManagerContract by inject()
+
+
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 
         }
@@ -87,12 +92,29 @@ class SettingsActivity : BaseActivity(), SettingsContract.View {
 
             addPreferencesFromResource(R.xml.settings)
 
+            val appTheme = findPreference("settings__app_theme")
+            appTheme?.summary = getThemeName(settingsManager.getThemeId())
+            appTheme.setOnPreferenceChangeListener { _, newValue ->
+                appTheme?.summary = getThemeName(newValue as String)
+                true
+            }
+
             val appVersion = findPreference("settings__app_version")
             appVersion?.summary = String.format(
                 getString(R.string.settings__app_version_description),
                 "${BuildConfig.VERSION_NAME}.${BuildConfig.VERSION_CODE}"
             )
+        }
 
+
+        private fun getThemeName(themeId: String): String {
+
+            return when (themeId) {
+                "1" -> getString(R.string.app_theme__mint)
+                "2" -> getString(R.string.app_theme__sky)
+                "3" -> getString(R.string.app_theme__cherry)
+                else -> getString(R.string.app_theme__space)
+            }
         }
     }
 }
